@@ -3,11 +3,12 @@ render() ;
 let colors = ["White", "Blue", "Green", "Salmon", "Yellow"];
 let posColor = 0;
 
-function change_color() {
-    const colorButtonObject = document.getElementById("color_btn");
-
-    colorButtonObject.style.background = colors[posColor];
-    colorButtonObject.textContent = colors[posColor];
+/**
+ * Fonction onclick pour changer la couleur du bouton
+ */
+document.getElementById("color_btn").onclick = function() {
+    this.style.background = colors[posColor];
+    this.textContent = colors[posColor];
 
     posColor = (posColor + 1) % colors.length;
 }
@@ -22,6 +23,9 @@ slider.oninput = function(){
 }
 
 
+/**
+ * Fonction onclick pour afficher dans la console une incrémentation de 0 à la valeur du slider
+ */
 document.getElementById("run_btn").onclick = function() {
     for (let i = 0; i < slider.value; i++) {
         console.log(i);
@@ -35,7 +39,7 @@ function render() {
 
     <h4 style="display:inline">Changez la couleur :</h4>
 
-    <button id="color_btn" class="yellow" onclick="change_color()">Yellow</button>
+    <button id="color_btn" class="yellow">Yellow</button>
 
     <br>
 
