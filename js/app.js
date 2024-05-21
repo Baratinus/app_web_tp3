@@ -10,6 +10,8 @@ document.getElementById("color_btn").onclick = function() {
     this.style.background = colors[posColor];
     this.textContent = colors[posColor];
 
+    document.getElementsByClassName("square")[0].style.background = colors[posColor];
+
     posColor = (posColor + 1) % colors.length;
 }
 
