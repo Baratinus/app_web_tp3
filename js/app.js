@@ -13,6 +13,14 @@ function change_color() {
 }
 
 
+var slider = document.getElementById("iterations_slider");
+var output = document.getElementById("iterations_count");
+output.innerHTML = slider.value ;
+
+slider.oninput = function(){
+    output.innerHTML = this.value
+}
+
 function render() {
     document.getElementById("app").innerHTML = `
     <h1>Constatez la nature monothreadée de JS </h1>
