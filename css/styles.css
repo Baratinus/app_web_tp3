@@ -7,18 +7,18 @@
     top: 300px; 
     z-index: 2; 
   } 
-  .square { 
+.square { 
     position: absolute; 
     background-color: darkslategray; 
     height: 80px; 
     width: 80px; 
     top: 300px; 
   } 
-  .yellow { 
+.yellow { 
     background-color: #ff0; 
     border: 1px solid #000; 
   } 
-  .blue { 
+.blue { 
     background-color: #00f; 
     color: #fff; 
     border: 1px solid #000; 
