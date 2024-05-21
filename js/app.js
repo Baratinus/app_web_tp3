@@ -1,6 +1,17 @@
 render() ;
 
-//votre code :
+let colors = ["White", "Blue", "Green", "Salmon", "Yellow"];
+let posColor = 0;
+
+function change_color() {
+    const colorButtonObject = document.getElementById("color_btn");
+
+    colorButtonObject.style.background = colors[posColor];
+    colorButtonObject.textContent = colors[posColor];
+
+    posColor = (posColor + 1) % colors.length;
+}
+
 
 function render() {
     document.getElementById("app").innerHTML = `
@@ -8,7 +19,7 @@ function render() {
 
     <h4 style="display:inline">Changez la couleur :</h4>
 
-    <button id="color_btn" class="yellow" >Yellow</button>
+    <button id="color_btn" class="yellow" onclick="change_color()">Yellow</button>
 
     <br>
 
