@@ -33,6 +33,36 @@ document.getElementById("run_btn").onclick = function() {
 }
 
 
+let cercle = document.getElementsByClassName("circle")[0];
+let carre = document.getElementsByClassName("square")[0];
+
+let posX = 0;
+
+var id = setInterval(moveRight, 10);
+
+function moveRight() {
+    if (posX <= (window.innerWidth - cercle.offsetWidth)) {
+        cercle.style.left = posX + "px";
+        carre.style.left = posX + "px";
+        posX+=5;
+    } else {
+        clearInterval(id);
+        id = setInterval(moveLeft, 10);
+    }
+}
+
+function moveLeft() {
+    if (posX > 0) {
+        cercle.style.left = posX + "px";
+        carre.style.left = posX + "px";
+        posX-=5;
+    } else {
+        clearInterval(id);
+        id = setInterval(moveRight, 10);
+    }
+}
+
+
 function render() {
     document.getElementById("app").innerHTML = `
     <h1>Constatez la nature monothreadée de JS </h1>
