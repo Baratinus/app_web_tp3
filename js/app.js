@@ -21,6 +21,14 @@ slider.oninput = function(){
     output.innerHTML = this.value
 }
 
+
+document.getElementById("run_btn").onclick = function() {
+    for (let i = 0; i < slider.value; i++) {
+        console.log(i);
+    }
+}
+
+
 function render() {
     document.getElementById("app").innerHTML = `
     <h1>Constatez la nature monothreadée de JS </h1>
