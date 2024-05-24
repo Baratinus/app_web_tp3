@@ -42,26 +42,36 @@ let posX = 0;
 
 var id = setInterval(moveRight, 10);
 
+/**
+ * Déplacement vers la droite du carré et disque
+ */
 function moveRight() {
-    if (posX <= (window.innerWidth - cercle.offsetWidth)) {
-        cercle.style.left = posX + "px";
-        carre.style.left = posX + "px";
-        posX+=5;
-    } else {
+    posX += 5;
+
+    if (posX >= (window.innerWidth - cercle.offsetWidth)) {
         clearInterval(id);
         id = setInterval(moveLeft, 10);
+        posX = window.innerWidth - cercle.offsetWidth;
     }
+
+    cercle.style.left = posX + "px";
+    carre.style.left = posX + "px";
 }
 
+/**
+ * Déplacement vers la gauche du carré et disque
+ */
 function moveLeft() {
-    if (posX > 0) {
-        cercle.style.left = posX + "px";
-        carre.style.left = posX + "px";
-        posX-=5;
-    } else {
+    posX -= 5;
+
+    if (posX <= 0) {
         clearInterval(id);
         id = setInterval(moveRight, 10);
+        posX = 0;
     }
+
+    cercle.style.left = posX + "px";
+    carre.style.left = posX + "px";
 }
 
 
