@@ -25,13 +25,13 @@ slider.oninput = function(){
 }
 
 
+var monWorker = new Worker("js/worker.js");
+
 /**
- * Fonction onclick pour afficher dans la console une incrémentation de 0 à la valeur du slider
+ * Fonction onclick pour envoyer un message au web worker
  */
 document.getElementById("run_btn").onclick = function() {
-    for (let i = 0; i < slider.value; i++) {
-        console.log(i);
-    }
+    monWorker.postMessage(slider.value);
 }
 
 
